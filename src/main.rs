@@ -21,10 +21,10 @@ async fn main() {
         Err(e) => eprintln!("Error while fetching order: {}", e),
     }
 
-    match client.get_products(None,None).await {
-        Ok(product_list) => println!("Fetched Products: {:?}", product_list),
-        Err(e) => eprintln!("Error while fetching order: {}", e),
-    }
+    // match client.get_products(None,None).await {
+    //     Ok(product_list) => println!("Fetched Products: {:?}", product_list),
+    //     Err(e) => eprintln!("Error while fetching order: {}", e),
+    // }
 
     // Test creating an order
     /* let order = CreateOrderInput {

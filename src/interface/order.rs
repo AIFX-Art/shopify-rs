@@ -1,5 +1,7 @@
 use serde::{Serialize,Deserialize};
 
+use super::refund::Refund;
+
 #[derive(Debug, Serialize, Deserialize)]
 pub enum OrderStatus {
     open,     // Show only open orders.
@@ -217,7 +219,8 @@ pub struct LineItem {
     pub total_discount_set: OrderSet,
     pub discount_allocations: Vec<DiscountAllocation>,
     pub origin_location: Option<OriginLocation>,
-    pub duties: Option<Vec<Duty>>,
+    #[serde(default)]
+    pub duties: Vec<Duty>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -261,18 +264,18 @@ pub struct ShippingLine {
     pub is_removed: bool,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
-pub struct Refund {
-    pub id: u64,
-    pub order_id: u64,
-    pub created_at: String,
-    pub note: Option<String>,
-    pub user_id: Option<u64>,
-    pub processed_at: String,
-    pub refund_line_items: Vec<String>,
-    pub transactions: Vec<String>,
-    pub order_adjustments: Vec<String>,
-}
+// #[derive(Debug, Serialize, Deserialize)]
+// pub struct Refund {
+//     pub id: u64,
+//     pub order_id: u64,
+//     pub created_at: String,
+//     pub note: Option<String>,
+//     pub user_id: Option<u64>,
+//     pub processed_at: String,
+//     pub refund_line_items: Vec<RefundLineItem>,
+//     pub transactions: Vec<String>,
+//     pub order_adjustments: Vec<String>,
+// }
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct Customer {
