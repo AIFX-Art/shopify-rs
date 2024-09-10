@@ -84,11 +84,14 @@ impl ShopifyClient {
             .await
             .unwrap();
 
-        //let response_body = res.text().await.unwrap();
-        //println!("{}", response_body);
+        let response_body = res.text().await.unwrap();
+        println!("{}", response_body);
         //
 
-        let orders: OrderList = res.json().await.unwrap();
+        //let orders: OrderList = res.json().await.unwrap();
+        let orders = OrderList {
+            orders: vec![]
+        };
         //println!("order {:?}", orders);
         Ok(orders)
     }

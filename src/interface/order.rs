@@ -267,7 +267,7 @@ pub struct Refund {
     pub order_id: u64,
     pub created_at: String,
     pub note: Option<String>,
-    pub user_id: Option<String>,
+    pub user_id: Option<u64>,
     pub processed_at: String,
     pub refund_line_items: Vec<String>,
     pub transactions: Vec<String>,

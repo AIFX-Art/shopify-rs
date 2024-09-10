@@ -17,7 +17,12 @@ async fn main() {
 
     // Test getting an order
     match client.get_orders("any").await {
-        Ok(orders) => println!("Fetched Orders: {:?}", orders),
+        Ok(order_list) => println!("Fetched Orders: {:?}", order_list),
+        Err(e) => eprintln!("Error while fetching order: {}", e),
+    }
+
+    match client.get_products(None,None).await {
+        Ok(product_list) => println!("Fetched Products: {:?}", product_list),
         Err(e) => eprintln!("Error while fetching order: {}", e),
     }
 
