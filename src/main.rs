@@ -17,7 +17,6 @@ async fn main() {
 
     // Test getting an order
     match client.get_orders("any").await {
-        // Replace with a valid order_id
         Ok(orders) => println!("Fetched Orders: {:?}", orders),
         Err(e) => eprintln!("Error while fetching order: {}", e),
     }
