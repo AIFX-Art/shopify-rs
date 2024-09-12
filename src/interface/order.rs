@@ -279,7 +279,7 @@ pub struct ShippingLine {
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct Customer {
-    pub id: u32,
+    pub id: u64,
     pub email: Option<String>,
     pub accepts_marketing: Option<bool>,
     pub created_at: String,
