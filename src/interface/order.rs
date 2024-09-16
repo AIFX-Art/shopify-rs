@@ -206,7 +206,7 @@ pub struct LineItem {
     pub requires_shipping: bool,
     pub sku: String,
     pub title: String,
-    pub variant_id: u64,
+    pub variant_id: Option<u64>,
     pub variant_title: Option<String>,
     pub vendor: String,
     pub name: Option<String>,
