@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Image {
     pub id: u64,
-    pub product_id: u64,
+    pub product_id: Option<u64>,
     pub position: u32,
     pub created_at: String,
     pub updated_at: String,
@@ -16,7 +16,7 @@ pub struct Image {
 #[derive(Debug, Serialize, Deserialize)]
 pub struct ProductOption {
     pub id: u64,
-    pub product_id: u64,
+    pub product_id: Option<u64>,
     pub name: String,
     pub position: u32,
     pub values: Vec<String>,
@@ -25,7 +25,7 @@ pub struct ProductOption {
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Variant {
     pub id: u64,
-    pub product_id: u64,
+    pub product_id: Option<u64>,
     pub title: String,
     pub price: String,
     pub sku: String,
