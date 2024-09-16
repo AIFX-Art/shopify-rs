@@ -200,7 +200,7 @@ pub struct LineItem {
     pub grams: i32,
     pub id: u64,
     pub price: String,
-    pub product_id: u64,
+    pub product_id: Option<u64>,
     pub quantity: i32,
     pub current_quantity: i32,
     pub requires_shipping: bool,
