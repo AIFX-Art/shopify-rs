@@ -244,7 +244,7 @@ pub struct PaymentTerm {
     pub amount: f32,
     pub currency: String,
     pub payment_terms_name: Option<String>,
-    pub payment_terms_type: String,
+    pub payment_terms_type: Option<String>,
     pub due_in_days: i32,
     pub payment_schedules: Vec<PaymentSchedule>,
 }
